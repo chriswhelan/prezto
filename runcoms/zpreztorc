@@ -33,8 +33,22 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
+  'archive' \
+  'command-not-found' \
+  'dpkg' \
+  'fasd' \
+  'ssh' \
+  'git' \
+  'gpg' \
+  'haskell' \
+  'python' \
+  'ruby' \
+  'rails' \
+  'rsync' \
   'utility' \
   'completion' \
+  'syntax-highlighting' \
+  'history-substring-search' \
   'prompt'
 
 #
