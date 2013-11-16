@@ -1,9 +1,27 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# The following lines were added by compinstall
+
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _ignored _match _correct _approximate _prefix
+zstyle ':completion:*' expand prefix suffix
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' ignore-parents parent pwd ..
+zstyle ':completion:*' insert-unambiguous true
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' list-suffixes true
+zstyle ':completion:*' matcher-list '' 'r:|[._-]=** r:|=**' 'm:{[:lower:]}={[:upper:]}' 'l:|=* r:|=*'
+zstyle ':completion:*' max-errors 3 numeric
+zstyle ':completion:*' menu select=0
+zstyle ':completion:*' original false
+zstyle ':completion:*' preserve-prefix '//[^/]##/'
+zstyle ':completion:*' select-prompt %SScrolling %l matches: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+zstyle :compinstall filename '/home/chris/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -11,3 +29,22 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+HISTFILE=~/.histfile
+HISTSIZE=99999999999999999
+SAVEHIST=99999999999999999
+
+setopt autocd notify noclobber autonamedirs
+setopt extendedhistory sharehistory histignorealldups histreduceblanks nohistbeep
+setopt extendedglob nomatch
+unsetopt beep
+#bindkey -v
+
+d=~/dev
+g=~/dev/git
+
+alias history='history -fED'
+alias hist=history
+
+. ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
